@@ -8,6 +8,8 @@ import android.support.v7.app.AppCompatActivity;
 
 public class MainActivity extends AppCompatActivity {
 
+
+   //declaring objects
     private TabLayout tabLayout;
     private AppBarLayout appBarLayout;
     private ViewPager viewPager;
@@ -15,10 +17,12 @@ public class MainActivity extends AppCompatActivity {
 
     //for set icon into tab items
     final int[] ICONS = new int[]{
-            R.mipmap.ic_launcher,
-            R.mipmap.ic_launcher,
-            R.mipmap.ic_launcher
+            R.drawable.ic_home,
+            R.drawable.ic_friends,
+            R.drawable.ic_group
     };
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,9 +36,9 @@ public class MainActivity extends AppCompatActivity {
         //create viewpageradaper class object
         ViewPagerAdapter adapter=new ViewPagerAdapter(getSupportFragmentManager());
         //adding fragments using adapter object
-        adapter.AddFragment(new FirstFragment(), "First Fragment");
-        adapter.AddFragment(new SecondFragment(), "Second Fragment");
-        adapter.AddFragment(new ThirdFragment(), "Third Fragment");
+        adapter.AddFragment(new FirstFragment(), "Home");
+        adapter.AddFragment(new SecondFragment(), "Friends");
+        adapter.AddFragment(new ThirdFragment(), "Group");
 
         //set adapter into viewpager
         viewPager.setAdapter(adapter);
